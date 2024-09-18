@@ -3,9 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Property;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\PropertyValue;
+use Illuminate\Database\Seeder;
 
 class PropertySeeder extends Seeder
 {
@@ -15,60 +14,60 @@ class PropertySeeder extends Seeder
     public function run(): void
     {
         $colorProperty = Property::create([
-            'name' => 'Color'
+            'name' => 'Color',
         ]);
 
         PropertyValue::create([
             'property_id' => $colorProperty->id,
-            'value' => 'Red'
+            'value' => 'Red',
         ]);
 
         PropertyValue::create([
             'property_id' => $colorProperty->id,
-            'value' => 'Blue'
+            'value' => 'Blue',
         ]);
 
         PropertyValue::create([
             'property_id' => $colorProperty->id,
-            'value' => 'Green'
+            'value' => 'Green',
         ]);
 
         $sizeProperty = Property::create([
-            'name' => 'Size'
+            'name' => 'Size',
         ]);
 
         PropertyValue::create([
             'property_id' => $sizeProperty->id,
-            'value' => 'Small'
+            'value' => 'Small',
         ]);
 
         PropertyValue::create([
             'property_id' => $sizeProperty->id,
-            'value' => 'Middle'
+            'value' => 'Middle',
         ]);
 
         PropertyValue::create([
             'property_id' => $sizeProperty->id,
-            'value' => 'Big'
+            'value' => 'Big',
         ]);
 
         $brandProperty = Property::create([
-           'name' => 'Brand'
+            'name' => 'Brand',
         ]);
 
         PropertyValue::create([
             'property_id' => $brandProperty->id,
-            'value' => 'Russia'
+            'value' => 'Russia',
         ]);
 
         PropertyValue::create([
             'property_id' => $brandProperty->id,
-            'value' => 'Spain'
+            'value' => 'Spain',
         ]);
 
         PropertyValue::create([
             'property_id' => $brandProperty->id,
-            'value' => 'Mexico'
+            'value' => 'Mexico',
         ]);
     }
 }

@@ -22,7 +22,7 @@ class ProductPropertyValueFactory extends Factory
 
         $product_property = ProductPropertyValue::where('product_id', $product_id)
             ->where('property_value_id', $property_id)->get();
-        if($product_property->isEmpty()) {
+        if ($product_property->isEmpty()) {
             return [
                 'product_id' => $product_id,
                 'property_value_id' => $property_id,

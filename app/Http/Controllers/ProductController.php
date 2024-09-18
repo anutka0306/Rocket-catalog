@@ -9,11 +9,12 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(Request $request) {
-        $filters_ids = array();
+    public function index(Request $request)
+    {
+        $filters_ids = [];
         $filters = $request->get('properties', []);
         foreach ($filters as $key => $filter) {
-            $property =  Property::where('name', $key)->first();
+            $property = Property::where('name', $key)->first();
             foreach ($filter as $value) {
                 $value = PropertyValue::where('property_id', $property->id)
                     ->where('value', $value)->first();
@@ -23,8 +24,7 @@ class ProductController extends Controller
 
         $query = Product::query()->with('propertyValues.property');
 
-
-        if(!empty($filters_ids)) {
+        if (! empty($filters_ids)) {
             foreach ($filters_ids as $property => $values) {
                 $query->whereHas('propertyValues', function ($q) use ($values) {
                     $q->whereIn('property_value_id', $values);
